@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.5" name="CoreDB">
+  <DataContextMoniker Name="/CoreDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="626d2db2-4e0e-4da8-853d-cc3e18466b80" absoluteBounds="3.5, 4.375, 2, 6.9630354817708335">
+      <DataClassMoniker Name="/CoreDBDataContext/PUConsumerData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcabe334-14a9-4fb8-a234-daf8ab2f694d" absoluteBounds="3.515, 4.835, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ca9c3a1-7019-49ba-bd60-1386f010a1fa" absoluteBounds="6.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/CoreDBDataContext/PUBrand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33608a70-d35d-46b9-875b-62d57e2545b6" absoluteBounds="6.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56db2834-2cfd-4424-ad94-074f2e7bce0c" absoluteBounds="3.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/CoreDBDataContext/PUClient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b5f84f3-bf28-473b-9cde-0fdf00972721" absoluteBounds="3.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87e136a5-c6ea-4e85-949f-7174149440ff" absoluteBounds="0.75, 1.5, 2, 12.732078450520834">
+      <DataClassMoniker Name="/CoreDBDataContext/PUEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df12f70a-5643-4e4c-b346-8cd3aaaaa884" absoluteBounds="0.765, 1.96, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b20888dc-888a-4389-a261-dcdd4c2edbf9" absoluteBounds="6.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/CoreDBDataContext/PUTour" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16ffe07d-06a1-48c0-b1ef-d034c42a0e30" absoluteBounds="6.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 1.84699625651042); (6.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CoreDBDataContext/PUClient/PUClient_PUBrand" />
+      <nodes>
+        <classShapeMoniker Id="56db2834-2cfd-4424-ad94-074f2e7bce0c" />
+        <classShapeMoniker Id="2ca9c3a1-7019-49ba-bd60-1386f010a1fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.85651774088542); (3.5 : 7.85651774088542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CoreDBDataContext/PUEvent/PUEvent_PUConsumerData" />
+      <nodes>
+        <classShapeMoniker Id="87e136a5-c6ea-4e85-949f-7174149440ff" />
+        <classShapeMoniker Id="626d2db2-4e0e-4da8-853d-cc3e18466b80" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="00d6f0b4-e63f-4047-867a-e4d35c56b5b4" absoluteBounds="8.5, 4.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CoreDBDataContext/PUProgram" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcdc2b1a-2ccd-4c10-96ba-26669deba457" absoluteBounds="8.515, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.6250005 : 5.8862939453125); (9.6250005 : 7.44314697265625); (8.75 : 7.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CoreDBDataContext/PUProgram/PUProgram_PUTour" />
+      <nodes>
+        <classShapeMoniker Id="00d6f0b4-e63f-4047-867a-e4d35c56b5b4" />
+        <classShapeMoniker Id="b20888dc-888a-4389-a261-dcdd4c2edbf9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.46875 : 2.8381982421875); (7.46875 : 5.19314697265625); (8.5 : 5.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CoreDBDataContext/PUBrand/PUBrand_PUProgram" />
+      <nodes>
+        <classShapeMoniker Id="2ca9c3a1-7019-49ba-bd60-1386f010a1fa" />
+        <classShapeMoniker Id="00d6f0b4-e63f-4047-867a-e4d35c56b5b4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

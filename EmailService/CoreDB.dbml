@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="core_db" Class="CoreDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=core_db;Persist Security Info=True;User ID=sa" SettingsObjectName="EmailService.Properties.Settings" SettingsPropertyName="core_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PUConsumerData" Member="PUConsumerDatas">
+    <Type Name="PUConsumerData">
+      <Column Name="ConsumerDataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompressedImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RawImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OverlayImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PictureTakenDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeviceID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OnsiteServerFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImagesUploaded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MicrositeViews" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FacebookUploads" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TwitterClicks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoPrintClicks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoSaveClicks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoWallPaperClicks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SecureCode" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="MicrositeMobilePictureViews" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WebCombinedImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FacebookPictureViews" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FacebookFriends" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMSSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyCompleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MMSEmail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AppVersion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DigitalImagePurchased" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DigitalSignatureImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="PUEvent_PUConsumerData" Member="PUEvent" ThisKey="EventID" OtherKey="EventID" Type="PUEvent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUBrands" Member="PUBrands">
+    <Type Name="PUBrand">
+      <Column Name="BrandID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SmallLogoName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LogoLinkURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="PUBrand_PUProgram" Member="PUPrograms" ThisKey="BrandID" OtherKey="BrandID" Type="PUProgram" />
+      <Association Name="PUClient_PUBrand" Member="PUClient" ThisKey="ClientID" OtherKey="ClientID" Type="PUClient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUClients" Member="PUClients">
+    <Type Name="PUClient">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="PUClient_PUBrand" Member="PUBrands" ThisKey="ClientID" OtherKey="ClientID" Type="PUBrand" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUEvents" Member="PUEvents">
+    <Type Name="PUEvent">
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TourID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventManagerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OptInText" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="SaveRawImage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmailRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FirstNameRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastNameRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmailSubject" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailBody" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="BasicSurveyDisplayFlags" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BasicSurveyRequiredFlags" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailFrom" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SendLink" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowEmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowPhone" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowFirstName" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowLastName" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AdvancedSurveyDisplayFlags" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AdvancedSurveyRequiredFlags" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AdvancedSurveyQuestions" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FlexDD1Answers" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FlexDD2Answers" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FlexDD3Answers" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ReleaseText" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TextSubject" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TextBody" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailHost" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailPort" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmailUserID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailPassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AttachImages" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoViewerBackground" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhotoViewerContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhotoViewerFrame" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShowSecureCode" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SecureCodeRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSearchVisits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SecureCodesSearched" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventTrackingCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShowWebOverlayScrollingModule" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowFacebookLoginOption" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FacebookGalleryViews" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SelfGuidedProcess" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FacebookWebViewMode" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowLandscapeDisplay" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FacebookImageSearchVisits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SendEmail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SendMMS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SendMMSOption_CodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HasWebSurvey" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EventType_CodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FacebookCaption" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TwitterCaption" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PrintOption" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PUEvent_PUConsumerData" Member="PUConsumerDatas" ThisKey="EventID" OtherKey="EventID" Type="PUConsumerData" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUTours" Member="PUTours">
+    <Type Name="PUTour">
+      <Column Name="TourID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProgramID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="PUProgram_PUTour" Member="PUProgram" ThisKey="ProgramID" OtherKey="ProgramID" Type="PUProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUPrograms" Member="PUPrograms">
+    <Type Name="PUProgram">
+      <Column Name="ProgramID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="PUProgram_PUTour" Member="PUTours" ThisKey="ProgramID" OtherKey="ProgramID" Type="PUTour" />
+      <Association Name="PUBrand_PUProgram" Member="PUBrand" ThisKey="BrandID" OtherKey="BrandID" Type="PUBrand" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

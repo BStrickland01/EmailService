@@ -1,0 +1,10 @@
+C:\Users\Bobby\Documents\Visual Studio 2010\Projects\EmailService\EmailService\bin\Debug\EmailService.exe.config
+C:\Users\Bobby\Documents\Visual Studio 2010\Projects\EmailService\EmailService\bin\Debug\EmailService.exe
+C:\Users\Bobby\Documents\Visual Studio 2010\Projects\EmailService\EmailService\bin\Debug\EmailService.pdb
+C:\Users\Bobby\Documents\Visual Studio 2010\Projects\EmailService\EmailService\obj\x86\Debug\EmailService.exe
+C:\Users\Bobby\Documents\Visual Studio 2010\Projects\EmailService\EmailService\obj\x86\Debug\EmailService.pdb
+C:\Users\Bobby\Documents\GitHub\EmailService\EmailService\bin\Debug\EmailService.exe.config
+C:\Users\Bobby\Documents\GitHub\EmailService\EmailService\obj\x86\Debug\EmailService.exe
+C:\Users\Bobby\Documents\GitHub\EmailService\EmailService\obj\x86\Debug\EmailService.pdb
+C:\Users\Bobby\Documents\GitHub\EmailService\EmailService\bin\Debug\EmailService.exe
+C:\Users\Bobby\Documents\GitHub\EmailService\EmailService\bin\Debug\EmailService.pdb

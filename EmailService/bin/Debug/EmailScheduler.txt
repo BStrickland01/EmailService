@@ -1,0 +1,16 @@
+Text File Created
+
+--------------------------------------------
+DateTime: 2/4/2014 7:10:09 PM -- Run contains 3 applicable records
+--------------------------------------------
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2400860' at '2/4/2014 7:10:11 PM'
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2400861' at '2/4/2014 7:10:11 PM'
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2402093' at '2/4/2014 7:10:12 PM'
+
+
+--------------------------------------------
+DateTime: 2/4/2014 7:11:35 PM -- Run contains 3 applicable records
+--------------------------------------------
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2400860' at '2/4/2014 7:13:14 PM'
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2400861' at '2/4/2014 7:13:14 PM'
+Email/MMS msg failed for 'bstrick75@hotmail.com' -- EventID = '1977' -- ConsumerDataID = '2402093' at '2/4/2014 7:13:14 PM'
